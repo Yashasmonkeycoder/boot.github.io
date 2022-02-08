@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>edit or not?</title>
+    <style type="text/css" media="all">
+    .border-3 {
+    border-width:5px !important;
+     }
+     body {
+    -moz-transform:scale(1.8, 1.8);
+    zoom: 1.8;
+    zoom: 180%;
+}
+    </style>
+  </head>
+  <body class="bg-white" >
+    <h2 class="text-light border border-danger border-3 rounded p-3 my-3 w-75 bg-dark ml-5 text-center">Use the button to make below paragraph editable</h2>
+    <div id="box" class="ml-5 bg-dark text-white border border-info border-3 rounded w-75 shadow-lg p-4 mb-4 text-center">
+    <h5 class="text-monospace">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur congue venenatis orci at congue. Pellentesque ornare ultrices nisi, sit amet commodo ipsum efficitur vel. Donec ut viverra nisi. Donec ullamcorper nec sem et semper. Donec fringilla, neque in ornare ultricies, mauris velit faucibus tortor, eu vehicula tellus mauris in mauris. Ut libero ex, auctor quis tristique ut, efficitur finibus augue. Maecenas nec odio ipsum. Nulla tortor ante, ornare at ligula congue, congue mattis nisi. Nam lacinia magna nec pulvinar vehicula.</h5>
+    </div>
+    <button class="btn btn-outline-success btn-lg mx-5 w-75" id="bt" >make editable</button>
+  </body>
+  <script type="text/javascript" >
+    var g = 1;
+    document.querySelector("#bt").addEventListener("click",function(){
+      var ktt = document.getElementById("box");
+      var h = document.getElementById("bt");
+      if(g%2 != 0){
+        ktt.contentEditable = true;
+        h.className = "btn btn-outline-danger btn-lg mx-5 w-75"
+        h.innerText="make non-editable"
+      }else{
+        ktt.contentEditable = false;
+        h.className = "btn btn-outline-success btn-lg mx-5 w-75"
+        h.innerText="make editable"
+      }
+      g+=1;
+    })
+  </script>
+</html>
